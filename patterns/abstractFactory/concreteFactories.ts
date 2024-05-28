@@ -1,6 +1,9 @@
 import { AbstractDelivery } from "./absctractDelivery";
 import { BigBox, Box, Delivered, Envelope, Package, Size } from "./createdObjects";
 
+/**
+ * Concrete factories that implements abstract one
+ */
 export class SeaDelivery implements AbstractDelivery {
     delivery: Delivered = 'sea';
     createDelivery(name: string, size: Size): Package | undefined{
@@ -21,6 +24,15 @@ export class RoadDelivery implements AbstractDelivery {
         return getDelivery(name, size,  this.delivery);
     }    
 }
+
+/**
+ * To get a 'Box' sent by 'Delivery' based on its size.
+ * Functions in typescript/js served as methods, but outside the class. Technically functions are builtin js objects.
+ * @param name 
+ * @param size 
+ * @param delivery 
+ * @returns 
+ */
 
 function getDelivery(name: string, size:Size, delivery:Delivered){
     switch(size){

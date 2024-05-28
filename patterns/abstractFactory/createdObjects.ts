@@ -1,7 +1,9 @@
+// abstract object
 export interface Package {
     type: string;    
 }
 
+// concrete objects that implements abstract object
 export class Box implements Package {
     type = 'Box';    
     constructor(name: string, delivered: Delivered){
@@ -29,4 +31,5 @@ export enum Size {
     big
 }
 
-export type Delivered = 'sea' | 'air' | 'road'
+export type Delivered = 'sea' | 'air' | 'road'  //types in typescript is the way to restrict what values can be used as a param
+// (very similar to interface, but defines an object/model rather than behaviour)

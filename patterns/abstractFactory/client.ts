@@ -2,6 +2,9 @@ import { AbstractDelivery } from "./absctractDelivery";
 import { SeaDelivery } from "./concreteFactories";
 import { Package, Size } from "./createdObjects";
 
+/**
+ * Example of how to generate object
+ */
 class Client {
     constructor(private factory: AbstractDelivery){}
 
@@ -11,4 +14,4 @@ class Client {
     
 }
 
-const object = new Client(new SeaDelivery).makeDelivery('Bigone', Size.big);
+const delivery = new Client(new SeaDelivery).makeDelivery('Bigone', Size.small);
